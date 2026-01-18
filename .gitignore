@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Artifacts (模型文件可选是否提交)
+artifacts/*.joblib
+
+# OS
+.DS_Store
+Thumbs.db
