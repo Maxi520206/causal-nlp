@@ -17,13 +17,12 @@ Research pipeline:
 5. Representation probing
 
 ## Project Structure
+
+```text
 causal-nlp
-│
-├── src                # model and training code
-├── notebooks          # exploratory analysis
-├── artifacts          # experiment outputs
-│
-├── experiments
-│   └── baseline       # initial IMDB baseline
-│
+├── src/                # model and training code
+├── notebooks/          # exploratory analysis
+├── artifacts/          # experiment outputs
+├── experiments/
+│   └── baseline/       # initial IMDB baseline
 └── README.md
