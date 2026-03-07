@@ -20,9 +20,14 @@ Research pipeline:
 
 ```text
 causal-nlp
-├── src/                # model and training code
-├── notebooks/          # exploratory analysis
-├── artifacts/          # experiment outputs
+├── src/                # core model and training code
+├── notebooks/          # exploratory analysis and drafts
+├── artifacts/          # saved outputs and figures
 ├── experiments/
-│   └── baseline/       # initial IMDB baseline
+│   ├── baseline/       # initial IMDB baseline
+│   ├── spurious/       # spurious correlation injection
+│   ├── cda/            # counterfactual data augmentation
+│   ├── adjustment/     # causal adjustment methods
+│   └── probing/        # representation probing
+├── requirements.txt
 └── README.md
