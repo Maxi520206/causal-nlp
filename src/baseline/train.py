@@ -18,7 +18,7 @@ def parse_args():
     p.add_argument("--ngram_max", type=int, default=1)
     p.add_argument("--C", type=float, default=1.0)
     p.add_argument("--max_iter", type=int, default=1000)
-    p.add_argument("--out_dir", type=str, default="artifacts")
+    p.add_argument("--out_dir", type=str, default="artifacts/baseline")
     return p.parse_args()
 
 
