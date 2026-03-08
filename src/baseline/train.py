@@ -51,7 +51,7 @@ def main():
     clf.fit(X_train_vec, y_train)
     print("Training done.", flush=True)
 
-        print("Evaluating on VAL...", flush=True)
+    print("Evaluating on VAL...", flush=True)
     val_pred = clf.predict(X_val_vec)
     val_acc = accuracy_score(y_val, val_pred)
     val_cm = confusion_matrix(y_val, val_pred)
