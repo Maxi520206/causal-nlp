@@ -1,4 +1,4 @@
-# Causal NLP Project
+<img width="917" height="957" alt="image" src="https://github.com/user-attachments/assets/da589b0b-bf14-40b8-8697-2d0217cdd0f9" /># Causal NLP Project
 
 This repository studies shortcut learning and causal mechanisms in NLP.
 
@@ -15,6 +15,20 @@ Research pipeline:
 3. Counterfactual data augmentation
 4. Causal adjustment methods
 5. Representation probing
+
+### Baseline v1 (implemented)
+
+The first step of the pipeline is a reproducible IMDB sentiment classification baseline using **TF-IDF + Logistic Regression**.
+
+Reproducibility protocol:
+
+- fixed dataset split
+- 3 random seeds (1,2,3)
+- model artifacts saved for each run
+
+Example run:
+
+python -m src.baseline.train --seed 1
 
 ## Project Structure
 
