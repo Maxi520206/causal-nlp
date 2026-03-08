@@ -34,14 +34,18 @@ python -m src.baseline.train --seed 1
 
 ```text
 causal-nlp
-├── src/                # core model and training code
-├── notebooks/          # exploratory analysis and drafts
-├── artifacts/          # saved outputs and figures
+├── config/
+├── docs/
+│   └── research_logs/
 ├── experiments/
-│   ├── baseline/       # initial IMDB baseline
-│   ├── spurious/       # spurious correlation injection
-│   ├── cda/            # counterfactual data augmentation
-│   ├── adjustment/     # causal adjustment methods
-│   └── probing/        # representation probing
+│   ├── baseline/
+│   ├── spurious/
+│   ├── cda/
+│   ├── adjustment/
+│   └── probing/
+├── notebooks/
+├── src/
+│   └── baseline/
 ├── requirements.txt
+├── .gitignore
 └── README.md
