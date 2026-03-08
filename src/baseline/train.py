@@ -2,6 +2,7 @@
 import argparse
 from pathlib import Path
 import joblib
+import pandas as pd
 
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
@@ -50,7 +51,7 @@ def main():
     clf.fit(X_train_vec, y_train)
     print("Training done.", flush=True)
 
-    print("Evaluating on VAL...", flush=True)
+        print("Evaluating on VAL...", flush=True)
     val_pred = clf.predict(X_val_vec)
     val_acc = accuracy_score(y_val, val_pred)
     val_cm = confusion_matrix(y_val, val_pred)
@@ -59,6 +60,32 @@ def main():
     print("[VAL] confusion matrix:\n", val_cm)
     print("[VAL] classification report:\n",
           classification_report(y_val, val_pred, digits=4))
+
+    out_dir = Path(args.out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    errors = []
+
+    for text, true_label, pred_label in zip(X_val, y_val, val_pred):
+        if true_label != pred_label:
+            errors.append({
+                "text": text,
+                "true": true_label,
+                "pred": pred_label
+            })
+
+    print(f"[VAL] number of errors: {len(errors)}", flush=True)
+
+    errors_df = pd.DataFrame(errors)
+    errors_df.to_csv(out_dir / "val_errors.csv", index=False)
+
+    print(f"Saved: {(out_dir / 'val_errors.csv').as_posix()}")
+
+    joblib.dump(vectorizer, out_dir / "tfidf.joblib")
+    joblib.dump(clf, out_dir / "logreg.joblib")
+
+    print(f"Saved: {(out_dir / 'tfidf.joblib').as_posix()}")
+    print(f"Saved: {(out_dir / 'logreg.joblib').as_posix()}")
 
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
