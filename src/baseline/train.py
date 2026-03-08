@@ -7,7 +7,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 
-from src.data import load_imdb_splits
+from src.baseline.data import load_imdb_splits
 
 
 def parse_args():
