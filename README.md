@@ -1,4 +1,4 @@
-<img width="917" height="957" alt="image" src="https://github.com/user-attachments/assets/da589b0b-bf14-40b8-8697-2d0217cdd0f9" /># Causal NLP Project
+# Causal NLP Project
 
 This repository studies shortcut learning and causal mechanisms in NLP.
 
